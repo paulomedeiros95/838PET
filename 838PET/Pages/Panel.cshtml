@@ -1,0 +1,29 @@
+﻿@page
+@model _838PET.PanelModel
+@{
+    ViewData["Title"] = "Panel";
+}
+
+@using Microsoft.AspNetCore.Identity
+@using _838PET.Areas.Identity.Data
+
+@inject SignInManager<UserIdentity> SignInManager
+@inject UserManager<UserIdentity> UserManager
+
+@{
+    var myLocalUser = await UserManager.GetUserAsync(User);
+}
+
+
+@if (myLocalUser.Perfil == "PJ")
+{
+    <partial name="_PanelPjPartial" />
+}
+@if (myLocalUser.Perfil == "PF")
+{
+    <partial name="_PanelPfPartial" />
+}
+@if (myLocalUser.Perfil == "Admin")
+{
+    <partial name="_PanelAdmPartial" />
+}

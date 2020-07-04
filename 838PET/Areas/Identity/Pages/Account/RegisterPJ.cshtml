@@ -1,0 +1,153 @@
+﻿@page
+@model RegisterPJModel
+@{
+    ViewData["Title"] = "Register";
+}
+
+
+
+    <div class="container">
+        <div class="row justify-content-center align-items-center">
+            <div class="col-md-6 align-self-center">
+                <div class="cards">
+                    <form asp-route-returnUrl="@Model.ReturnUrl" method="post">
+                        <h4>Cadastro</h4>
+                        <div asp-validation-summary="All" class="text-danger"></div>
+                        <div class="form-group">
+                            <label asp-for="Input.Email">E-mail</label>
+                            <input asp-for="Input.Email" class="form-control" />
+                            <span asp-validation-for="Input.Email" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Input.NomeFantasia">Nome Fantasia</label>
+                            <input asp-for="Input.NomeFantasia" class="form-control" />
+                            <span asp-validation-for="Input.NomeFantasia" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Input.RazaoSocial">Razão Social</label>
+                            <input asp-for="Input.RazaoSocial" class="form-control" />
+                            <span asp-validation-for="Input.RazaoSocial" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Input.Responsavel">Responsável</label>
+                            <input asp-for="Input.Responsavel" class="form-control" />
+                            <span asp-validation-for="Input.Responsavel" class="text-danger"></span>
+                        </div>
+                        <div class="row">
+                            <div class="col-12 col-md-6">
+                                <div class="form-group">
+                                    <label asp-for="Input.Document">CPF/CNPJ</label>
+                                    <input asp-for="Input.Document" class="form-control" onkeydown="javascript: fMasc( this, chooseDocumentMask );" />
+                                    <span asp-validation-for="Input.Document" class="text-danger"></span>
+                                </div>
+
+                            </div>
+                            <div class="col-12 col-md-6">
+                                <div class="form-group">
+                                    <label asp-for="Input.CRVM">CRVM</label>
+                                    <input asp-for="Input.CRVM" class="form-control" />
+                                    <span asp-validation-for="Input.CRVM" class="text-danger"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12 col-md-6">
+                                <div class="form-group">
+                                    <label asp-for="Input.Telefone">Telefone</label>
+                                    <input asp-for="Input.Telefone" class="form-control" onkeydown="javascript: fMasc( this, mascaraDeTelefone );" />
+                                    <span asp-validation-for="Input.Telefone" class="text-danger"></span>
+                                </div>
+
+                            </div>
+                            <div class="col-12 col-md-6">
+                                <div class="form-group">
+                                    <label asp-for="Input.AlternativoTelefone">Celular</label>
+                                    <input asp-for="Input.AlternativoTelefone" class="form-control" onkeydown="javascript: fMasc( this, mascaraDeTelefone );" />
+                                    <span asp-validation-for="Input.AlternativoTelefone" class="text-danger"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12 col-md-6">
+                                <div class="form-group">
+                                    <label asp-for="Input.CEP">CEP</label>
+                                    <input asp-for="Input.CEP" class="form-control" />
+                                    <span asp-validation-for="Input.CEP" class="text-danger"></span>
+                                </div>
+                            </div>
+                            <div class="col-12 col-md-6">
+                                <div class="form-group">
+                                    <label asp-for="Input.Endereco">Endereço</label>
+                                    <input asp-for="Input.Endereco" class="form-control" />
+                                    <span asp-validation-for="Input.Endereco" class="text-danger"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12 col-md-6">
+                                <div class="form-group">
+                                    <label asp-for="Input.Bairro">Bairro</label>
+                                    <input asp-for="Input.Bairro" class="form-control" />
+                                    <span asp-validation-for="Input.Bairro" class="text-danger"></span>
+                                </div>
+                            </div>
+                            <div class="col-12 col-md-6">
+                                <div class="form-group">
+                                    <label asp-for="Input.Complemento">Complemento</label>
+                                    <input asp-for="Input.Complemento" class="form-control" />
+                                    <span asp-validation-for="Input.Complemento" class="text-danger"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12 col-md-6">
+                                <div class="form-group">
+                                    <label asp-for="Input.Cidade">Cidade</label>
+                                    <input asp-for="Input.Cidade" class="form-control" />
+                                    <span asp-validation-for="Input.Cidade" class="text-danger"></span>
+                                </div>
+                            </div>
+                            <div class="col-12 col-md-6">
+                                <div class="form-group">
+                                    <label asp-for="Input.Estado">Estado</label>
+                                    <input asp-for="Input.Estado" class="form-control" />
+                                    <span asp-validation-for="Input.Estado" class="text-danger"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Input.Password">Senha</label>
+                            <input asp-for="Input.Password" class="form-control" />
+                            <span asp-validation-for="Input.Password" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Input.ConfirmPassword">Confirmar Senha</label>
+                            <input asp-for="Input.ConfirmPassword" class="form-control" />
+                            <span asp-validation-for="Input.ConfirmPassword" class="text-danger"></span>
+                        </div>
+                        <div class="form-group  form-bt">
+                            <button type="submit" class="btn btn-primary">Cadastrar</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <style>
+        header {
+            display: none;
+        }
+
+        footer {
+            display: none;
+        }
+
+        body {
+            background-color: #2207c7;
+        }
+    </style>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

@@ -1,0 +1,529 @@
+﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
+for details on configuring this project to bundle and minify static web assets. */
+
+a.navbar-brand {
+    white-space: normal;
+    text-align: center;
+    word-break: break-all;
+}
+
+/* Provide sufficient contrast against white background */
+a {
+    color: #0366d6;
+}
+
+.btn-primary {
+    color: #fff;
+    background-color: #1b6ec2;
+    border-color: #1861ac;
+}
+
+.nav-pills .nav-link.active, .nav-pills .show > .nav-link {
+    color: #fff;
+    background-color: #1b6ec2;
+    border-color: #1861ac;
+}
+
+/* Sticky footer styles
+    -------------------------------------------------- */
+html {
+    font-size: 14px;
+}
+
+@media (min-width: 768px) {
+    html {
+        font-size: 16px;
+    }
+}
+
+.border-top {
+    border-top: 1px solid #e5e5e5;
+}
+
+.border-bottom {
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.box-shadow {
+    box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
+}
+
+button.accept-policy {
+    font-size: 1rem;
+    line-height: inherit;
+}
+
+/* Sticky footer styles
+    -------------------------------------------------- */
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    /* Margin bottom by footer height */
+    font-family: 'Raleway', sans-serif;
+}
+
+.footer {
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    white-space: nowrap;
+    background-color: #2207c7;
+}
+
+.foot {
+    background-color: #1F04C8;
+    color: white;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+    .foot ul {
+        list-style: none;
+        margin-bottom: 0px !important;
+        margin-left: 0px !important;
+        padding-left: 0px !important;
+        padding-top: 10px;
+    }
+
+        .foot ul li a {
+            color: white;
+            font-size: 16px;
+        }
+
+    .foot h4 {
+        color: white;
+        font-size: 22px;
+    }
+
+    .foot .divider {
+        background-color: white;
+        width: 90%;
+        height: 1px;
+    }
+
+
+/* =================================== My Style =========================================== */
+
+/*Menu conta */
+.account-menu {
+    background-color: #2207c7;
+    width: 100%;
+}
+
+    .account-menu a {
+        color: white;
+        font-weight: bold;
+        text-align: center;
+        display: block;
+    }
+
+#logoutForm .logout{
+    color: white !important;
+    font-weight: bold;
+}
+/*Fim Menu conta */
+
+/*menu  */
+.fixed-menu {
+    position: fixed !important;
+    background-color: white !important;
+    z-index: 99999;
+    transition: all .5s;
+    width: 100%;
+    top: 0;
+    box-shadow: 0 4px 5px 0 rgba(0,0,0,0.14), 0 1px 10px 0 rgba(0,0,0,0.12), 0 2px 4px -1px rgba(0,0,0,0.3) !important;
+}
+
+#topo {
+    width: 100%;
+    transition: all .5s;
+    box-shadow: 0 4px 5px 0 rgba(0,0,0,0.14), 0 1px 10px 0 rgba(0,0,0,0.12), 0 2px 4px -1px rgba(0,0,0,0.3) !important;
+}
+
+.navbar-brand .logo {
+    transition: all .3s;
+    -webkit-transition: all .3s;
+}
+
+    .navbar-brand .logo:hover {
+        -webkit-transform: scale(1.1);
+        -moz-transform: scale(1.1);
+        -o-transform: scale(1.1);
+        -ms-transform: scale(1.1);
+        transform: scale(1.1);
+    }
+/*Fim menu  */
+
+/*menu principal*/
+.menu-principal ul {
+    padding-left: 50px;
+}
+
+    .menu-principal ul li {
+        padding-right: 50px;
+        font-weight: bold;
+        font-size: 20px;
+    }
+
+.navbar-light .navbar-nav .nav-link {
+    color: #2207c7;
+}
+
+/*Fim menu principal*/
+
+/*Carousel*/
+.item-carousel-home {
+    height: 520px;
+}
+/*Fim Carousel*/
+
+/*Titulo página principal*/
+.main-page-title h1 {
+    font-size: 30px;
+    font-weight: bold;
+    color: #2207c7;
+    padding-top: 20px;
+}
+
+.main-page-title h2 {
+    font-size: 20px;
+    font-weight: bold;
+    color: #424242;
+}
+/*Fim Titulo página principal*/
+
+
+/*Botão Veja Mais*/
+.bt-veja-mais {
+    padding: 15px 50px;
+    text-transform: uppercase;
+    background: #2207c7;
+    border: 2px solid #2207c7;
+    color: #fff;
+    font-weight: 600;
+    font-size: .75rem;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all .3s;
+    -webkit-transition: all .3s;
+}
+
+    .bt-veja-mais:hover {
+        opacity: 0.8;
+        color: #fff;
+        text-decoration: none;
+        -webkit-transform: scale(1.1);
+        -moz-transform: scale(1.1);
+        -o-transform: scale(1.1);
+        -ms-transform: scale(1.1);
+        transform: scale(1.1);
+        box-shadow: 0 14px 26px -12px rgba(131, 0, 255, 0.42), 0 4px 23px 0px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(131, 0, 255, 0.2);
+    }
+/*Fim Botão Veja Mais*/
+
+
+/*Linha produtos*/
+.line-product-boxes {
+    padding-top: 20px;
+}
+
+    .line-product-boxes .product {
+        padding-bottom: 20px;
+    }
+
+.products-box {
+    border-radius: 6px;
+    border: 1px solid #f4f4f4;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+}
+
+    .products-box img {
+        border-top-right-radius: 6px;
+        border-top-left-radius: 6px;
+    }
+
+    .products-box:hover {
+        -webkit-transform: scale(1.1);
+        -moz-transform: scale(1.1);
+        -o-transform: scale(1.1);
+        -ms-transform: scale(1.1);
+        transform: scale(1.1);
+    }
+
+    .products-box .products-informations {
+        padding: 10px;
+    }
+
+        .products-box .products-informations h4 {
+            text-transform: uppercase;
+            font-size: 18px;
+            font-weight: bold;
+            color: #424242
+        }
+
+        .products-box .products-informations .label-parceiros {
+            font-size: 14px;
+            color: #424242;
+            padding-top: 10px;
+            margin-bottom: 0px;
+        }
+
+        .products-box .products-informations .label-local {
+            font-size: 14px;
+            color: #424242;
+            margin-bottom: 0px;
+        }
+
+    .products-box .products-button {
+        display: flex;
+        align-items: center;
+        align-content: center;
+        flex-direction: column;
+    }
+/*Fim Linha produtos*/
+
+/*Linha destaques*/
+.highlights {
+    padding-top: 20px;
+    margin-bottom: 200px;
+}
+
+    .highlights .highlight-title h2 {
+        font-size: 30px;
+        font-weight: bold;
+        color: #2207c7;
+        padding-top: 20px;
+    }
+
+.linha-categorias {
+    padding-top: 20px;
+}
+
+.highlights .content-overlay {
+    background: rgba(0,0,0,0.7);
+    position: absolute;
+    height: 100%;
+    width: 95%;
+    border-radius: 6px;
+    opacity: 0.5;
+    -webkit-transition: all 0.4s ease-in-out 0s;
+    -moz-transition: all 0.4s ease-in-out 0s;
+    transition: all 0.4s ease-in-out 0s;
+}
+
+    .highlights .content-overlay:hover {
+        opacity: 0.9;
+    }
+
+
+.highlights .highlight-blocs {
+    margin-bottom: 25px;
+}
+
+.bloc-consultas {
+    background-image: url(../img/consultas.jpg);
+    background-position: center;
+    height: 220px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    align-items: end;
+    align-content: end;
+    flex-direction: column-reverse;
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+
+.bloc-banho {
+    background-image: url(../img/banho.jpg);
+    background-position: center;
+    height: 220px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    align-items: end;
+    align-content: end;
+    flex-direction: column-reverse;
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+.bloc-vacinas {
+    background-image: url(../img/vacinas.png);
+    background-position: center;
+    height: 220px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    align-items: end;
+    align-content: end;
+    flex-direction: column-reverse;
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+.bloc-exames {
+    background-image: url(../img/exames.jpg);
+    background-position: center;
+    height: 220px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    align-items: end;
+    align-content: end;
+    flex-direction: column-reverse;
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+.bloc-atendimento {
+    background-image: url(../img/destaques.jpg);
+    background-position: center;
+    height: 220px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    align-items: end;
+    align-content: end;
+    flex-direction: column-reverse;
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+.box-category {
+    position: absolute;
+    bottom: 5px;
+    left: 15px;
+}
+
+    .box-category h4 {
+        color: white;
+        font-weight: bold;
+        padding-left: 15px;
+    }
+/*Fim Linha destaques*/
+
+/* Internal page title */
+.box-title {
+    background-color: #1F04C8;
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+
+    .box-title h1 {
+        color: white;
+        font-weight: bold;
+        text-align: center;
+    }
+/* Internal page title */
+
+/* About us */
+.about-us-text {
+    padding: 30px;
+}
+
+    .about-us-text p {
+        text-align: center;
+        color: #424242;
+        font-size: 18px;
+        line-height: 30px;
+        letter-spacing: 1.5px;
+    }
+
+.about-us-products {
+    background-color: #E8E8E8;
+}
+
+    .about-us-products h2 {
+        text-align: center;
+        color: #424242;
+        font-weight: bold;
+        font-size: 26px;
+        padding-bottom: 15px;
+    }
+/* About us */
+
+/* Card */
+    .cards{
+        background: #fff;  
+          margin: 1rem;
+          box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+          border-radius: 8px;
+          padding: 20px;
+    }
+
+    .cards h2{
+        font-weight: 500;
+    }
+
+    .cards form {
+        padding: 3px;
+    }
+
+    .cards .group 			  { 
+      position:relative; 
+      margin-bottom:20px;
+    }
+
+    
+/* Fim Card */
+
+/* Login */
+    .login-body{
+        padding-top: 50px;
+    }
+
+    .form-bt{
+        display: flex;
+        align-items: center;
+        align-content: center;
+        flex-direction: column;
+    }
+
+    .form-bt button{
+        width: 50%;
+        background-color:#2207c7;
+    }
+
+    .form-actions {
+        text-align:center;
+        color: #fff;
+    }
+
+    .form-actions a{
+        text-align:center;
+        color: #fff;
+    }
+/* Fim login */
+
+/* Media celular */
+@media only screen and (max-width: 768px) {
+    .item-carousel-home {
+        height: auto;
+    }
+
+    .veja-mais {
+        margin-top: 30px;
+        display: flex;
+        align-items: center;
+        align-content: center;
+        flex-direction: column;
+    }
+
+    .highlights .content-overlay {
+        width: 92%;
+    }
+
+    .highlights {
+        margin-bottom: 50px;
+    }
+
+    .card {
+        width: 330px;
+    }
+}

@@ -1,0 +1,116 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - _838PET</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+    <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
+    <script src="~/lib/jquery/dist/jquery.min.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <header>
+        <div id="topo">
+            <div class="account-menu">
+                <div class="container">
+                    <div class="row justify-content-end">
+                        <partial name="_LoginPartial" />
+                    </div>
+                </div>
+            </div>
+            <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow">
+                <div class="container">
+                    <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index"><img src="~/img/logo.png" height="80" class="logo" /></a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                            aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse menu-principal">
+                        <ul class="navbar-nav flex-grow-1">
+                            <li class="nav-item">
+                                <a class="nav-link" asp-area="" asp-page="/Index">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" asp-area="" asp-page="/AboutUs/AboutUsPage">Sobre a Empresa</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Privacy">Serviços</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Privacy">Produtos</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+    <script>
+        jQuery(function () {
+            var nav = jQuery('#topo');
+            jQuery(window).scroll(function () {
+                if (jQuery(this).scrollTop() > 130) {
+                    nav.addClass("fixed-menu");
+                    jQuery('body').css('padding-top', 70);
+                } else {
+                    nav.removeClass("fixed-menu");
+                    jQuery('body').css('padding-top', 0);
+                }
+            });
+        });
+    </script>
+
+    
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    
+
+        <footer class="footer text-muted foot">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 col-md-4">
+                        <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index"><img src="~/img/logo.png" height="90" class="logo" /></a>
+                        <ul>
+                            <li>
+                                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index"><p>Termos de uso</p></a>
+                            </li>
+                            <li>
+                                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index"><p>Políticas de privicidade</p></a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-12 col-md-4">
+                        <h4>Menu</h4>
+                        <div class="divider"></div>
+                        <ul>
+                            <li>
+                                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index"><p>Home</p></a>
+                            </li>
+                            <li>
+                                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index"><p>Sobre a Empresa</p></a>
+                            </li>
+                            <li>
+                                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index"><p>Serviços</p></a>
+                            </li>
+                            <li>
+                                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index"><p>Produtos</p></a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-12 col-md-4">
+                        <h4>Redes Sociais</h4>
+                        <div class="divider"></div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+
+    @RenderSection("Scripts", required: false)
+</body>
+</html>

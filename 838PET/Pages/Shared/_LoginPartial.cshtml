@@ -1,0 +1,41 @@
+﻿@using Microsoft.AspNetCore.Identity
+@using _838PET.Areas.Identity.Data
+
+@inject SignInManager<UserIdentity> SignInManager
+@inject UserManager<UserIdentity> UserManager
+
+@{
+    var myLocalUser = await UserManager.GetUserAsync(User);
+}
+
+@if (SignInManager.IsSignedIn(User))
+{
+    <div class="col-8 col-md-4 login">
+        <a id="manage" class="nav-link" asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage">Olá, @(myLocalUser.FullName)!</a>
+    </div>
+
+    <div class="col-4 col-md-2 signup">
+        <form id="logoutForm" class="form-inline" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Page("/Index", new { area = "" })">
+            <button id="logout" type="submit" class="nav-link btn btn-link logout">Logout</button>
+        </form>
+     </div>
+    }
+    else
+    {
+        <div class="col-4 col-md-2 login">
+            <a class="nav-link" id="login" asp-area="Identity" asp-page="/Account/Login">Login</a>
+        </div>
+
+        <div class="col-4 col-md-2 signup">
+            <a class="nav-link" id="register" asp-area="Identity" asp-page="/Account/RegisterPJ">Seja um parceiro</a>
+        </div>
+
+        <div class="col-4 col-md-2 signup">
+            <a class="nav-link" id="register" asp-area="Identity" asp-page="/Account/Register">Seja um cliente</a>
+        </div>
+
+
+
+
+    }
+
