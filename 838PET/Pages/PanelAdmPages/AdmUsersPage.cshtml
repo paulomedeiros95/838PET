@@ -1,23 +1,13 @@
-﻿@using Microsoft.AspNetCore.Identity
-@using _838PET.Areas.Identity.Data
-
-@inject SignInManager<UserIdentity> SignInManager
-@inject UserManager<UserIdentity> UserManager
-
-@{
-    var myLocalUser = await UserManager.GetUserAsync(User);
-}
-
-<!doctype html>
+﻿<!doctype html>
 <html lang="pt_br">
 <head>
-    <title>Admin Panel</title>
+    <title>Usuários</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/panel.css" />
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body style="background-color: #ECF0F3;">
     <div id="mySidenav" class="sidenav">
@@ -28,7 +18,7 @@
         <a href="#">Vouchers</a>
         <a href="#">Financeiro</a>
         <a href="#">Configurações</a>
-        <a href="./user.html">Usuários</a>
+        <a href="#">Usuários</a>
         <a href="#">Sair</a>
     </div>
     <header>
@@ -61,54 +51,39 @@
                                     <li><a href="#">Vouchers</a></li>
                                     <li><a href="#">Financeiro</a></li>
                                     <li><a href="#">Configurações</a></li>
-                                    <li><a asp-page="../PanelAdmPages/AdmUsersPage">Usuários</a></li>
+                                    <li><a href="#">Usuários</a></li>
                                     <li><a href="#">Sair</a></li>
                                 </ul>
                             </div>
                         </div>
                     </div>
                     <div class="col-12 col-md-9 align-self-center content-col">
-                        <h1>Olá, @(myLocalUser.FullName)</h1>
-                        <div class="container options-home">
+                        <h1>Usuários</h1>
+                        <div class="container user-filter">
                             <div class="row align-items-center">
-                                <div class="col-12 col-md-12 align-self-center neumorphic user-data">
-                                    <h2>Usuários</h2>
-                                    <p>Conheça melhor seus usuários e acompanhe o crescimento da sua base de clientes.</p>
-                                    <div class="row numbers-line justify-content-center">
-                                        <div class="col-12 col-md-3 user-data-1 user-block neumorphic">
-                                            <h5>Clientes</h5>
-                                            <h3>130</h3>
+                                <div class="col-12 col-md-12 align-self-center neumorphic users-board">
+                                    <div class="row justify-content-center">
+                                        <div class="col-10 col-md-8 align-self-center">
+                                            <input type="text" placeholder="Pesquisar" class="neumorphic-input search-user" />
                                         </div>
-                                        <div class="col-12 col-md-3 user-data-2 user-block neumorphic">
-                                            <h5>Parceiros</h5>
-                                            <h3>80</h3>
-                                        </div>
-                                        <div class="col-12 col-md-3 user-data-3 user-block neumorphic">
-                                            <h5>Total</h5>
-                                            <h3>210</h3>
+                                        <div class="col-2 col-md-2 align-self-center search-bt-col">
+                                            <button type="submit" class="neumorphic-button search-bt ripple"><i class="fa fa-search"></i></button>
                                         </div>
                                     </div>
+                                    <div class="row filter-line justify-content-center">
+                                        <div class="col-3 col-md-2 user-data-1 filter-block neumorphic ripple">
+                                            <h5>Clientes</h5>
+                                        </div>
+                                        <div class="col-3 col-md-2 user-data-2 filter-block neumorphic ripple">
+                                            <h5>Parceiros</h5>
+                                        </div>
+                                        <div class="col-3 col-md-2 user-data-3 filter-block neumorphic ripple">
+                                            <h5>Todos</h5>
+                                        </div>
+                                    </div>
+
                                 </div>
                             </div>
-                            <div class="row justify-content-between services-data">
-                                <div class="col-12 col-md-5 all-services neumorphic">
-                                    <h2>Serviços</h2>
-                                    <p>Total de serviços cadastrados.</p>
-                                    <h3>90</h3>
-                                </div>
-                                <div class="col-12 col-md-3 all-services neumorphic">
-                                    <h2>Vouchers</h2>
-                                    <p>Total de vouchers emitidos.</p>
-                                    <h3>90</h3>
-                                </div>
-                                <div class="col-12 col-md-3 all-services neumorphic">
-                                    <h2>Produtos</h2>
-                                    <p>Valor padrão.</p>
-                                    <h3>R$1,30</h3>
-                                </div>
-                            </div>
-
-
                         </div>
                     </div>
                 </div>
@@ -123,6 +98,7 @@
         function closeNav() {
             document.getElementById("mySidenav").style.width = "0";
         }
+
     </script>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->

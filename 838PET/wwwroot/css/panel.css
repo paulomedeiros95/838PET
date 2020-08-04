@@ -1,0 +1,316 @@
+﻿html {
+    position: relative;
+    min-height: 100%;
+}
+
+#topo {
+    width: 100%;
+    transition: all .5s;
+    box-shadow: 0 4px 5px 0 rgba(0,0,0,0.14), 0 1px 10px 0 rgba(0,0,0,0.12), 0 2px 4px -1px rgba(0,0,0,0.3) !important;
+}
+
+.appbar {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    background-color: #2006BD;
+    display: none;
+}
+
+    .appbar .bt-mobile {
+        font-size: 30px;
+        cursor: pointer;
+        color: white;
+        padding-right: 10px;
+        padding-left: 10px;
+    }
+
+    .appbar .appbar-title {
+        color: white;
+        font-size: 35px;
+    }
+
+        .appbar .appbar-title label {
+            margin-bottom: 0;
+        }
+
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+}
+
+    .sidenav a {
+        padding: 8px 8px 8px 32px;
+        text-decoration: none;
+        font-size: 25px;
+        color: #818181;
+        display: block;
+        transition: 0.3s;
+    }
+
+        .sidenav a:hover {
+            color: #f1f1f1;
+        }
+
+    .sidenav .closebtn {
+        position: absolute;
+        top: 0;
+        right: 25px;
+        font-size: 36px;
+        margin-left: 50px;
+    }
+
+@media screen and (max-width: 750px) {
+    .appbar {
+        display: block;
+    }
+}
+
+@media screen and (max-height: 450px) {
+    .sidenav {
+        padding-top: 15px;
+    }
+
+        .sidenav a {
+            font-size: 18px;
+        }
+}
+
+.stack {
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+@media screen and (max-width: 750px) {
+    .stack {
+        padding-top: 10px;
+        padding-bottom: 50px;
+    }
+}
+
+/*Neumorphism*/
+.neumorphic {
+    background: linear-gradient(145deg, #fdffff, #d4d8db);
+    box-shadow: 5px 5px 13px #8d8f91, -5px -5px 13px #ffffff;
+}
+
+.neumorphic-input {
+    background: #d4d8db;
+    box-shadow: inset 7px 7px 14px #a5a8ab, inset -7px -7px 14px #ffffff;
+}
+
+.neumorphic-button {
+    background: linear-gradient(145deg, #e3e7ea, #bfc2c5);
+    box-shadow: 6px 6px 12px #9b9ea0, -6px -6px 12px #ffffff;
+}
+
+.divider {
+    height: 0.5px;
+}
+
+.neumorphic-sidebar {
+    width: 100%;
+    border-radius: 12px;
+    background: linear-gradient(145deg, #fdffff, #d4d8db);
+    box-shadow: 5px 5px 13px #a3a6a8, -5px -5px 13px #a3a6a8;
+}
+
+    .neumorphic-sidebar .sidebar {
+        padding: 15px;
+        background-color: #2006BD;
+        border-radius: 12px;
+    }
+
+        .neumorphic-sidebar .sidebar h2 {
+            color: white;
+            padding-left: 5px;
+        }
+
+        .neumorphic-sidebar .sidebar .divider {
+            background-color: white;
+            margin-top: 5px;
+            padding-left: 5px;
+            padding-right: 5px;
+            margin-bottom: 5px;
+        }
+
+        .neumorphic-sidebar .sidebar ul {
+            list-style: none;
+            padding-inline-start: 10px !important;
+            padding-top: 5px;
+            padding-bottom: 5px;
+        }
+
+            .neumorphic-sidebar .sidebar ul li {
+                margin-bottom: 20px;
+                font-size: 18px;
+            }
+
+                .neumorphic-sidebar .sidebar ul li a {
+                    color: white;
+                    transition: 0.3s;
+                }
+
+/*Neumorphism*/
+
+/* Ripple effect */
+.ripple {
+    background-position: center;
+    transition: background 0.8s;
+}
+
+    .ripple:hover {
+        background: #8d8f91 radial-gradient(circle, transparent 1%, #8d8f91 1%) center/15000%;
+    }
+
+    .ripple:active {
+        background-color: #d4d8db;
+        background-size: 100%;
+        transition: background 0s;
+    }
+/* Ripple effect */
+
+
+@media screen and (max-width: 750px) {
+    .sidebar-col {
+        display: none;
+    }
+}
+
+.content-col {
+    padding: 15px;
+    width: 100%;
+}
+
+    .content-col h1 {
+        color: #363636;
+    }
+
+    /*Home*/
+    .content-col .options-home {
+        margin-top: 15px;
+    }
+
+        .content-col .options-home .user-data {
+            padding: 15px;
+            border-radius: 12px;
+            color: #363636;
+        }
+
+            .content-col .options-home .user-data .numbers-line {
+                margin-top: 25px;
+            }
+
+                .content-col .options-home .user-data .numbers-line .user-block {
+                    margin-bottom: 15px;
+                    margin-left: 10px;
+                    margin-right: 10px;
+                    border-radius: 12px;
+                    padding: 10px;
+                }
+
+                    .content-col .options-home .user-data .numbers-line .user-block h5 {
+                        text-align: center;
+                        font-size: 25px;
+                    }
+
+                    .content-col .options-home .user-data .numbers-line .user-block h3 {
+                        font-weight: bold;
+                        text-align: center;
+                        font-size: 32px;
+                    }
+
+        .content-col .options-home .services-data {
+            margin-top: 15px;
+        }
+
+            .content-col .options-home .services-data .all-services {
+                color: #363636;
+                border-radius: 12px;
+                padding: 15px;
+                margin-bottom: 20px;
+            }
+
+                .content-col .options-home .services-data .all-services p {
+                    font-size: 12px;
+                }
+
+                .content-col .options-home .services-data .all-services h3 {
+                    font-size: 50px;
+                    text-align: center;
+                }
+    /*Home*/
+
+
+    /*User Page */
+    .content-col .user-filter {
+        margin-top: 15px;
+    }
+
+        .content-col .user-filter .users-board {
+            padding: 15px;
+            border-radius: 12px;
+            color: #363636;
+        }
+
+            .content-col .user-filter .users-board .search-user {
+                width: 100%;
+                border: none;
+                padding: 10px;
+                border-radius: 32px;
+                font-size: 22px;
+                text-decoration: none;
+            }
+
+                .content-col .user-filter .users-board .search-user:focus {
+                    outline: -webkit-focus-ring-color auto 0px;
+                }
+
+            .content-col .user-filter .users-board .search-bt {
+                border: none;
+                width: 50px;
+                height: 50px;
+                border-radius: 50px;
+                cursor: pointer;
+            }
+
+                .content-col .user-filter .users-board .search-bt:focus {
+                    outline: -webkit-focus-ring-color auto 0px;
+                }
+
+@media screen and (max-width: 750px) {
+    .search-bt-col {
+        padding-left: 0px !important;
+    }
+}
+
+.content-col .user-filter .users-board .filter-line {
+    margin-top: 25px;
+}
+
+    .content-col .user-filter .users-board .filter-line .filter-block {
+        margin-bottom: 15px;
+        margin-left: 10px;
+        margin-right: 10px;
+        border-radius: 12px;
+        padding: 10px;
+        cursor: pointer;
+    }
+
+        .content-col .user-filter .users-board .filter-line .filter-block h5 {
+            text-align: center;
+            font-size: 20px;
+        }
+
+@media screen and (max-width: 750px) {
+    .content-col .user-filter .users-board .filter-line .filter-block h5 {
+        font-size: 16px;
+    }
+}
