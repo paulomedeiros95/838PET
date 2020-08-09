@@ -8,9 +8,8 @@
     var myLocalUser = await UserManager.GetUserAsync(User);
     int totalPF = UserManager.Users.Where(x => x.Perfil == "PF").Count();
 
+    int totalUser = UserManager.Users.Where(x => x.Perfil != "Admin").Count();
     int totalPJ = UserManager.Users.Where(x => x.Perfil == "PJ").Count();
-    int totalUser = UserManager.Users.Count();
-
 }
 
 <!doctype html>
@@ -34,7 +33,7 @@
         <a href="#">Financeiro</a>
         <a href="#">Configurações</a>
         <a href="./user.html">Usuários</a>
-        <a href="#">Sair</a>
+        <a asp-area="Identity" asp-page="/Account/Logout">Sair</a>
     </div>
     <header>
         <div class="appbar" id="topo">
@@ -67,7 +66,7 @@
                                     <li><a href="#">Financeiro</a></li>
                                     <li><a href="#">Configurações</a></li>
                                     <li><a asp-page="../PanelAdmPages/AdmUsersPage">Usuários</a></li>
-                                    <li><a href="#">Sair</a></li>
+                                    <li><a asp-area="Identity" asp-page="/Account/Logout">Sair</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -80,18 +79,24 @@
                                     <h2>Usuários</h2>
                                     <p>Conheça melhor seus usuários e acompanhe o crescimento da sua base de clientes.</p>
                                     <div class="row numbers-line justify-content-center">
-                                        <div class="col-12 col-md-3 user-data-1 user-block neumorphic">
-                                            <h5>Clientes</h5>
-                                            <h3>@(totalPF)</h3>
-                                        </div>
-                                        <div class="col-12 col-md-3 user-data-2 user-block neumorphic">
-                                            <h5>Parceiros</h5>
-                                            <h3>@(totalPJ)</h3>
-                                        </div>
-                                        <div class="col-12 col-md-3 user-data-3 user-block neumorphic">
-                                            <h5>Total</h5>
-                                            <h3>@(totalUser)</h3>
-                                        </div>
+                                        <a href="">
+                                            <div class="col-12 col-md-3 user-data-1 user-block neumorphic">
+                                                <h5>Clientes</h5>
+                                                <h3>@(totalPF)</h3>
+                                            </div>
+                                        </a>
+                                        <a href="">
+                                            <div class="col-12 col-md-3 user-data-2 user-block neumorphic">
+                                                <h5>Parceiros</h5>
+                                                <h3>@(totalPJ)</h3>
+                                            </div>
+                                            </a>
+                                        <a href="">
+                                            <div class="col-12 col-md-3 user-data-3 user-block neumorphic">
+                                                <h5>Total</h5>
+                                                <h3>@(totalUser)</h3>
+                                            </div>
+                                            </a>
                                     </div>
                                 </div>
                             </div>
@@ -139,7 +144,7 @@
             display: none;
         }
 
-        .defautl-footer {
+        .default-footer {
             display: none;
         }
     </style>

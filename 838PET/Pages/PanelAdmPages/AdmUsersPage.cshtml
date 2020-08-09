@@ -1,4 +1,12 @@
-﻿<!doctype html>
+﻿@using Microsoft.AspNetCore.Identity
+@using _838PET.Areas.Identity.Data
+
+@inject SignInManager<UserIdentity> SignInManager
+@inject UserManager<UserIdentity> UserManager
+
+@{
+}
+<!doctype html>
 <html lang="pt_br">
 <head>
     <title>Usuários</title>
