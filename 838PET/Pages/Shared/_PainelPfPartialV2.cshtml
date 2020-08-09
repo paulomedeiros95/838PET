@@ -1,4 +1,10 @@
-﻿@using Microsoft.AspNetCore.Identity
+﻿@page
+@model _838PET.Pages.Shared._PainelPfPartialV2Model
+@{
+    Layout = null;
+}
+
+@using Microsoft.AspNetCore.Identity
 @using _838PET.Areas.Identity.Data
 
 @inject SignInManager<UserIdentity> SignInManager
@@ -6,11 +12,6 @@
 
 @{
     var myLocalUser = await UserManager.GetUserAsync(User);
-    int totalPF = UserManager.Users.Where(x => x.Perfil == "PF").Count();
-
-    int totalPJ = UserManager.Users.Where(x => x.Perfil == "PJ").Count();
-    int totalUser = UserManager.Users.Count();
-
 }
 
 <!doctype html>
@@ -82,15 +83,15 @@
                                     <div class="row numbers-line justify-content-center">
                                         <div class="col-12 col-md-3 user-data-1 user-block neumorphic">
                                             <h5>Clientes</h5>
-                                            <h3>@(totalPF)</h3>
+                                            <h3>130</h3>
                                         </div>
                                         <div class="col-12 col-md-3 user-data-2 user-block neumorphic">
                                             <h5>Parceiros</h5>
-                                            <h3>@(totalPJ)</h3>
+                                            <h3>80</h3>
                                         </div>
                                         <div class="col-12 col-md-3 user-data-3 user-block neumorphic">
                                             <h5>Total</h5>
-                                            <h3>@(totalUser)</h3>
+                                            <h3>210</h3>
                                         </div>
                                     </div>
                                 </div>
