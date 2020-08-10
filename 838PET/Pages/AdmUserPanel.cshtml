@@ -1,10 +1,17 @@
-﻿@using Microsoft.AspNetCore.Identity
+﻿@page
+@model _838PET.Pages.AdmUserPanelModel
+@{
+    Layout = null;
+}
+@using Microsoft.AspNetCore.Identity
 @using _838PET.Areas.Identity.Data
 
 @inject SignInManager<UserIdentity> SignInManager
 @inject UserManager<UserIdentity> UserManager
 
 @{
+    var profileFilter = @ViewData["Message"];
+    var allusersByprofile = UserManager.Users.Where(x => x.Perfil == profileFilter.ToString());
 }
 <!doctype html>
 <html lang="pt_br">
@@ -44,7 +51,15 @@
         </div>
     </header>
     <main role="main" class="pb-3">
-        <div class="stack">
+
+        <h1> Tela 2</h1>
+
+        @foreach (var currentUser in allusersByprofile)
+        {
+            <p> @currentUser.FullName</p>
+            <p> @currentUser.Email</p>
+        }
+        @*<div class="stack">
             <div class="container">
                 <div class="row align-items-center">
                     <div class="col-12 col-md-3 align-self-center sidebar-col">
@@ -80,13 +95,7 @@
                                     </div>
                                     <div class="row filter-line justify-content-center">
                                         <div class="col-3 col-md-2 user-data-1 filter-block neumorphic ripple">
-                                            <h5>Clientes</h5>
-                                        </div>
-                                        <div class="col-3 col-md-2 user-data-2 filter-block neumorphic ripple">
-                                            <h5>Parceiros</h5>
-                                        </div>
-                                        <div class="col-3 col-md-2 user-data-3 filter-block neumorphic ripple">
-                                            <h5>Todos</h5>
+                                            <h5>@profileFilter</h5>
                                         </div>
                                     </div>
 
@@ -96,7 +105,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div>*@
     </main>
     <script>
         function openNav() {
