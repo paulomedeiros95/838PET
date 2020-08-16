@@ -81,12 +81,16 @@
                                     <p>Conheça melhor seus usuários e acompanhe o crescimento da sua base de clientes.</p>
                                     <div class="row numbers-line justify-content-center">
 
-                                        <a asp-page="AdmUserPanel" asp-route-profile="PF">
-                                            <div class="col-12 col-md-3 user-data-1 user-block neumorphic">
-                                                <h5>Clientes</h5>
-                                                <h3>@(totalPF)</h3>
-                                            </div>
-                                        </a>
+                                        
+                                        <div class="col-12 col-md-3 user-data-1 user-block neumorphic">
+                                             <a asp-page="AdmUserPanel" asp-route-profile="PF">
+                                                 <div>
+                                                    <h5>Clientes</h5>
+                                                    <h3>@(totalPF)</h3>
+                                                 </div>
+                                             </a>
+                                        </div>
+                                        
                                         <a asp-page="AdmUserPanel" asp-route-profile="PJ">
                                             <div class="col-12 col-md-3 user-data-2 user-block neumorphic">
                                                 <h5>Parceiros</h5>
