@@ -10,6 +10,11 @@
 
     int totalUser = UserManager.Users.Where(x => x.Perfil != "Admin").Count();
     int totalPJ = UserManager.Users.Where(x => x.Perfil == "PJ").Count();
+
+    var splitName = myLocalUser.FullName.Split(" ");
+    String firstName = splitName[0];
+
+    
 }
 
 <!doctype html>
@@ -50,7 +55,7 @@
         </div>
     </header>
 
-    *<main role="main" class="pb-3">
+    <main role="main" class="pb-3">
         <div class="stack">
             <div class="container">
                 <div class="row align-items-center">
@@ -73,7 +78,7 @@
                         </div>
                     </div>
                     <div class="col-12 col-md-9 align-self-center content-col">
-                        <h1>Olá, @(myLocalUser.FullName)</h1>
+                        <h1>Olá, @(firstName)</h1>
                         <div class="container options-home">
                             <div class="row align-items-center">
                                 <div class="col-12 col-md-12 align-self-center neumorphic user-data">
@@ -82,7 +87,7 @@
                                     <div class="row numbers-line justify-content-center">
 
                                         
-                                        <div class="col-12 col-md-3 user-data-1 user-block neumorphic">
+                                        <div class="col-12 col-md-3 user-data-1 user-block neumorphic ripple">
                                              <a asp-page="AdmUserPanel" asp-route-profile="PF">
                                                  <div>
                                                     <h5>Clientes</h5>
@@ -91,12 +96,16 @@
                                              </a>
                                         </div>
                                         
-                                        <a asp-page="AdmUserPanel" asp-route-profile="PJ">
-                                            <div class="col-12 col-md-3 user-data-2 user-block neumorphic">
-                                                <h5>Parceiros</h5>
-                                                <h3>@(totalPJ)</h3>
-                                            </div>
-                                        </a>
+                                        
+                                        <div class="col-12 col-md-3 user-data-2 user-block neumorphic ripple">
+                                            <a asp-page="AdmUserPanel" asp-route-profile="PJ">
+                                                <div>
+                                                    <h5>Parceiros</h5>
+                                                    <h3>@(totalPJ)</h3>
+                                                </div>
+                                            </a>
+                                        </div>
+                                       
                                         <div class="col-12 col-md-3 user-data-3 user-block neumorphic">
                                             <h5>Total</h5>
                                             <h3>@(totalUser)</h3>

@@ -40,7 +40,7 @@
     z-index: 1;
     top: 0;
     left: 0;
-    background-color: #111;
+    background-color: #2006BD;
     overflow-x: hidden;
     transition: 0.5s;
     padding-top: 60px;
@@ -50,7 +50,7 @@
         padding: 8px 8px 8px 32px;
         text-decoration: none;
         font-size: 25px;
-        color: #818181;
+        color: #fff;
         display: block;
         transition: 0.3s;
     }
@@ -203,6 +203,16 @@
             border-radius: 12px;
             color: #363636;
         }
+
+        .content-col .options-home .user-data a {
+            text-decoration: none;
+            color: #363636;
+        }
+
+            .content-col .options-home .user-data a:hover {
+                text-decoration: none;
+                color: #363636;
+            }
 
             .content-col .options-home .user-data .numbers-line {
                 margin-top: 25px;
