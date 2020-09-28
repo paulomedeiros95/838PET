@@ -157,6 +157,19 @@
                     color: white;
                     transition: 0.3s;
                 }
+        
+        .neumorphic-sidebar .sidebar ul li .nav-link {
+            padding: 0px !important;
+         }
+
+        .neumorphic-sidebar .sidebar ul li .btn {
+            padding: 0px !important;
+         }
+
+         .neumorphic-sidebar .sidebar ul li button {
+            padding: 0px !important;
+            color: #fff;
+         }
 
 /*Neumorphism*/
 
@@ -259,7 +272,7 @@
     /*Home*/
 
 
-    /*User Page */
+ /*User Page */
     .content-col .user-filter {
         margin-top: 15px;
     }
@@ -310,8 +323,17 @@
         margin-left: 10px;
         margin-right: 10px;
         border-radius: 12px;
-        padding: 10px;
         cursor: pointer;
+    }
+
+    .content-col .user-filter .users-board .filter-line .filter-block a {
+       color: #363636;
+       text-decoration: none;
+    }
+
+    .content-col .user-filter .users-board .filter-line .filter-block div {
+        padding: 10px;
+       
     }
 
         .content-col .user-filter .users-board .filter-line .filter-block h5 {
@@ -321,6 +343,26 @@
 
 @media screen and (max-width: 750px) {
     .content-col .user-filter .users-board .filter-line .filter-block h5 {
-        font-size: 16px;
+        font-size: 14px;
+        margin-top: 10px !important;
+        margin-bottom: 10px !important;
+    }
+
+    .content-col .user-filter .users-board .filter-line .filter-block div {
+        padding: 0px;
     }
 }
+/*Fim User Page */
+
+
+/*Product Page */
+.content-col .product-price {
+    margin-top: 15px;
+}
+
+.content-col .product-price .product-board {
+    padding: 15px;
+    border-radius: 12px;
+    color: #363636;
+}
+/*Fim Product Page */

@@ -11,7 +11,7 @@
 @if (SignInManager.IsSignedIn(User))
 {
     <div class="col-8 col-md-4 login">
-        <a id="manage" class="nav-link" asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage">Olá, @(myLocalUser.FullName)!</a>
+        <a id="manage" class="nav-link" asp-area="" asp-page="/Panel" title="Manage">Olá, @(myLocalUser.FullName)!</a>
     </div>
 
     <div class="col-4 col-md-2 signup">

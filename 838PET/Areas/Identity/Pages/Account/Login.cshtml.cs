@@ -97,7 +97,7 @@ namespace _838PET.Areas.Identity.Pages.Account
                 }
                 else
                 {
-                    ModelState.AddModelError(string.Empty, "Invalid login attempt.");
+                    ModelState.AddModelError(string.Empty, "Usuário ou senha estão incorretos");
                     return Page();
                 }
             }
