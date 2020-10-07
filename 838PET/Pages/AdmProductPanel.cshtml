@@ -74,14 +74,21 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-12 col-md-9 align-self-center content-col">
+                    <div class="col-12 col-md-9 align-self-baseline content-col">
                         <h1>Produtos</h1>
                             <div class="container product-price">
                                 <div class="row align-items-center">
-                                    <div class="col-12 col-md-12 align-self-center neumorphic product-board">
+                                    <div class="col-12 col-md-12 align-self-baseline neumorphic product-board">
                                         <h2>Preço padrão</h2>
                                         <p>Defina o preço padrão que os parceiros irão pagar para anunciar.</p>
-                                     <h2> @Model.ProductValue</h2>
+                                        <div class="row justify-content-center">
+                                            <div class="col-10 col-md-8 align-self-center">
+                                                <input type="text" placeholder="Preço" class="neumorphic-input" id="priceInput" />
+                                            </div>
+                                            <div class="col-2 col-md-2 align-self-center done-bt-col">
+                                                <button type="submit" class="neumorphic-button done-bt ripple"><i class="fa fa-check" onclick="searchFunction()"></i></button>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                     </div>
