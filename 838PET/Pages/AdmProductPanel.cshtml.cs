@@ -21,6 +21,7 @@ namespace _838PET.Pages
             using (var context = new ApplicationDBContext())
             {
                 var x = context.Produtos.FirstOrDefault();
+                var pauloteste = 1;
                 ProductValue = x.Valor.ToString();
             }
         }
