@@ -104,6 +104,12 @@
 .neumorphic-input {
     background: #d4d8db;
     box-shadow: inset 7px 7px 14px #a5a8ab, inset -7px -7px 14px #ffffff;
+    width: 100%;
+    border: none;
+    padding: 10px;
+    border-radius: 32px;
+    font-size: 22px;
+    text-decoration: none;
 }
 
 .neumorphic-button {
@@ -364,5 +370,23 @@
     padding: 15px;
     border-radius: 12px;
     color: #363636;
+}
+
+.content-col .product-price .product-board .done-bt {
+    border: none;
+    width: 50px;
+    height: 50px;
+    border-radius: 50px;
+    cursor: pointer;
+}
+
+.content-col .product-price .product-board .done-bt:focus {
+    outline: -webkit-focus-ring-color auto 0px;
+}
+
+@media screen and (max-width: 750px) {
+    .done-bt-col {
+        padding-left: 0px !important;
+    }
 }
 /*Fim Product Page */
