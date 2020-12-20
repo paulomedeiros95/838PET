@@ -1,0 +1,204 @@
+﻿@page
+@model _838PET.Pages.AdmServicePanelModel
+@{
+    ViewData["Title"] = "AdmAddServicePanel";
+}
+
+<!doctype html>
+<html lang="pt_br">
+<head>
+    <title>Serviços</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/panel.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body style="background-color: #ECF0F3;">
+
+    <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <a asp-area="" asp-page="/Panel">Início</a>
+        <a asp-page="AdmProductPanel">Produtos</a>
+        <a asp-page="AdmServicePanel">Serviços</a>
+        <a href="#">Vouchers</a>
+        <a href="#">Financeiro</a>
+        <a href="#">Configurações</a>
+        <a asp-page="AdmUserPanel" asp-route-profile="all">Usuários</a>
+
+        <form id="logoutForm" class="form-inline" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Page("/Index", new { area = "" })">
+            <button id="logout" type="submit" class="nav-link btn btn-link logout">Sair</button>
+        </form>
+    </div>
+    <header>
+        <div class="appbar" id="topo">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-2">
+                        <span class="bt-mobile" onclick="openNav()">&#9776;</span>
+                    </div>
+                    <div class="col-10 appbar-title">
+                        <label>838 Pet</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main role="main" class="pb-3">
+
+
+        <div class="stack">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-12 col-md-3 align-self-center sidebar-col">
+                        <div class="neumorphic-sidebar">
+                            <div class="sidebar">
+                                <h2>Menu</h2>
+                                <div class="divider"></div>
+                                <ul>
+                                    <li><a asp-area="" asp-page="/Panel">Início</a></li>
+                                    <li><a asp-page="AdmProductPanel">Produtos</a></li>
+                                    <li><a asp-page="AdmServicePanel">Serviços</a></li>
+                                    <li><a href="#">Vouchers</a></li>
+                                    <li><a href="#">Financeiro</a></li>
+                                    <li><a href="#">Configurações</a></li>
+                                    <li><a asp-page="AdmUserPanel" asp-route-profile="all">Usuários</a></li>
+                                    <li>
+                                    <li>
+                                        <form id="logoutForm" class="form-inline" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Page("/Index", new { area = "" })">
+                                            <button id="logout" type="submit" class="nav-link btn btn-link logout">Sair</button>
+                                        </form>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-9 align-self-start content-col">
+                        <h1>Adicionar Serviço</h1>
+                        <div class="container services-container">
+                            <div class="row align-items-center">
+                                <div class="col-12 col-md-12 align-self-center neumorphic services-board">
+                                    <div class="row justify-content-center">
+                                        <div class="col-4 col-md-3 align-self-center">
+                                            <label class="label-defautl">Nome</label>
+                                        </div>
+                                        <div class="col-8 col-md-7 align-self-center">
+                                            <input type="text" placeholder="Nome" class="neumorphic-input" />
+                                        </div>
+                                    </div>
+                                    <div class="sizebox"></div>
+                                    <div class="row justify-content-center">
+                                        <div class="col-4 col-md-3 align-self-center">
+                                            <label class="label-defautl">Categoria</label>
+                                        </div>
+                                        <div class="col-8 col-md-7 align-self-center">
+                                            <input type="text" placeholder="Categoria" class="neumorphic-input" />
+                                        </div>
+                                    </div>
+                                    <div class="sizebox"></div>
+                                    <div class="row justify-content-center">
+                                        <div class="col-4 col-md-3 align-self-center">
+                                            <label class="label-defautl">Descrição</label>
+                                        </div>
+                                        <div class="col-8 col-md-7 align-self-center">
+                                            <input type="text" placeholder="Descrição" class="neumorphic-input" />
+                                        </div>
+                                    </div>
+
+                                    <div class="sizebox"></div>
+                                    <div class="row justify-content-center">
+                                        <div class="col-4 col-md-3 align-self-center">
+                                            <label class="label-defautl">Descrição Comercial</label>
+                                        </div>
+                                        <div class="col-8 col-md-7 align-self-center">
+                                            <input type="text" placeholder="Descrição Comercial" class="neumorphic-input" />
+                                        </div>
+                                    </div>
+                                    <div class="sizebox"></div>
+                                    <div class="row justify-content-center">
+                                        <div class="col-4 col-md-3 align-self-center">
+                                            <label class="label-defautl">Preço</label>
+                                        </div>
+                                        <div class="col-8 col-md-7 align-self-center">
+                                            <input type="text" placeholder="Preço da assinatura" class="neumorphic-input" />
+                                        </div>
+                                    </div>
+                                    <div class="sizebox"></div>
+                                    <div class="row justify-content-center">
+                                        <div class="col-4 col-md-3 align-self-center">
+                                            <label class="label-defautl">Mín. Valor de mercado </label>
+                                        </div>
+                                        <div class="col-8 col-md-7 align-self-center ">
+                                            <input type="text" placeholder="Mín. Valor de mercado" class="neumorphic-input" />
+                                        </div>
+                                    </div>
+                                    <div class="sizebox"></div>
+                                    <div class="row justify-content-center">
+                                        <div class="col-4 col-md-3 align-self-center">
+                                            <label class="label-defautl">Max. Valor de mercado </label>
+                                        </div>
+                                        <div class="col-8 col-md-7 align-self-center">
+                                            <input type="text" placeholder="Max. Valor de mercado" class="neumorphic-input" />
+                                        </div>
+                                    </div>
+                                    <div class="sizebox"></div>
+                                    <div class="row justify-content-center">
+                                        <div class="col-12 col-md-2 align-self-center">
+                                            <label class="label-defautl">Descontos:</label>
+                                        </div>
+                                        <div class="col-10 col-md-2 align-self-center discount-inputs">
+                                            <input type="text" placeholder="1 mês" class="neumorphic-input" />
+                                        </div>
+                                        <div class="col-10 col-md-2 align-self-center discount-inputs">
+                                            <input type="text" placeholder="3 meses" class="neumorphic-input" />
+                                        </div>
+                                        <div class="col-10 col-md-2 align-self-center discount-inputs">
+                                            <input type="text" placeholder="6 meses" class="neumorphic-input" />
+                                        </div>
+                                        <div class="col-10 col-md-2 align-self-center discount-inputs">
+                                            <input type="text" placeholder="12 meses" class="neumorphic-input" />
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="form-group  form-bt form-bt-services">
+                                        <button type="submit" class="btn btn-primary">Cadastrar</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    
+
+    <script>
+        function openNav() {
+            document.getElementById("mySidenav").style.width = "250px";
+        }
+
+        function closeNav() {
+            document.getElementById("mySidenav").style.width = "0";
+        }
+
+    </script>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <style>
+        .default-header {
+            display: none;
+        }
+
+        .default-footer {
+            display: none;
+        }
+    </style>
+    
+
+</body>
+</html>

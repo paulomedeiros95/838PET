@@ -1,33 +1,13 @@
 ﻿@page
-@model _838PET.Pages.AdmUserPanelModel
+@model _838PET.Pages.PjServicePanelModel
 @{
-    Layout = null;
+    ViewData["Title"] = "Serviços";
 }
-@using Microsoft.AspNetCore.Identity
-@using _838PET.Areas.Identity.Data
-@using Newtonsoft.Json
 
-@inject SignInManager<UserIdentity> SignInManager
-@inject UserManager<UserIdentity> UserManager
-
-@{
-    var profileFilter = @ViewData["Message"];
-    IQueryable allusersByprofile;
-    if (profileFilter.ToString() == "all")
-    {
-        allusersByprofile = UserManager.Users;
-    }
-    else {
-        allusersByprofile = UserManager.Users.Where(x => x.Perfil == profileFilter.ToString());
-    }
-    var allusersPF = UserManager.Users.Where(x => x.Perfil == "PF");
-    var allusersPJ = UserManager.Users.Where(x => x.Perfil == "PJ");
-
-}
 <!doctype html>
 <html lang="pt_br">
 <head>
-    <title>Usuários</title>
+    <title>Serviços</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -40,16 +20,15 @@
     <div id="mySidenav" class="sidenav">
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
         <a asp-area="" asp-page="/Panel">Início</a>
-        <a asp-page="AdmProductPanel">Produtos</a>
-        <a asp-page="AdmServicePanel">Serviços</a>
-        <a href="#">Vouchers</a>
+        <a asp-page="PjProductPanel">Produtos</a>
+        <a asp-page="PjServicePanel">Serviços</a>
+        <a asp-page="PjVoucherPanel">Vouchers</a>
         <a href="#">Financeiro</a>
         <a href="#">Configurações</a>
-        <a asp-page="AdmUserPanel" asp-route-profile="all">Usuários</a>
-        
-            <form id="logoutForm" class="form-inline" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Page("/Index", new { area = "" })">
-                <button id="logout" type="submit" class="nav-link btn btn-link logout">Sair</button>
-            </form>
+
+        <form id="logoutForm" class="form-inline" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Page("/Index", new { area = "" })">
+            <button id="logout" type="submit" class="nav-link btn btn-link logout">Sair</button>
+        </form>
     </div>
     <header>
         <div class="appbar" id="topo">
@@ -78,12 +57,11 @@
                                 <div class="divider"></div>
                                 <ul>
                                     <li><a asp-area="" asp-page="/Panel">Início</a></li>
-                                    <li><a asp-page="AdmProductPanel">Produtos</a></li>
-                                    <li><a asp-page="AdmServicePanel">Serviços</a></li>
-                                    <li><a href="#">Vouchers</a></li>
+                                    <li><a asp-page="PjProductPanel">Produtos</a></li>
+                                    <li><a asp-page="PjServicePanel">Serviços</a></li>
+                                    <li><a asp-page="PjVoucherPanel">Vouchers</a></li>
                                     <li><a href="#">Financeiro</a></li>
                                     <li><a href="#">Configurações</a></li>
-                                    <li><a asp-page="AdmUserPanel" asp-route-profile="all">Usuários</a></li>
                                     <li>
                                     <li>
                                         <form id="logoutForm" class="form-inline" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Page("/Index", new { area = "" })">
@@ -94,43 +72,21 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-12 col-md-9 align-self-center content-col">
-                        <h1>Usuários</h1>
-                        <div class="container user-filter">
+                    <div class="col-12 col-md-9 align-self-start content-col">
+                        <h1>Serviços</h1>
+                        <div class="container services-container">
                             <div class="row align-items-center">
-                                <div class="col-12 col-md-12 align-self-center neumorphic users-board">
+                                <div class="col-12 col-md-12 align-self-center neumorphic services-board">
                                     <div class="row justify-content-center">
                                         <div class="col-10 col-md-8 align-self-center">
-                                            <input type="text" placeholder="Pesquisar" class="neumorphic-input search-user" id="searchInput" onkeyup="searchFunction()"/>
+                                            <input type="text" placeholder="Pesquisar" class="neumorphic-input search-service" id="searchInput" onkeyup="searchFunction()" />
                                         </div>
                                         <div class="col-2 col-md-2 align-self-center search-bt-col">
                                             <button type="submit" class="neumorphic-button search-bt ripple"><i class="fa fa-search" onclick="searchFunction()"></i></button>
                                         </div>
                                     </div>
-                                    <div class="row filter-line justify-content-center">
-                                        <div class="col-3 col-md-2 user-data-1 filter-block neumorphic ripple" id="pf">
-                                            <a asp-page="AdmUserPanel" asp-route-profile="PF">
-                                                <div>
-                                                    <h5>Usuários</h5>
-                                                </div>
-                                            </a>
-                                        </div>
-                                        <div class="col-3 col-md-2 user-data-1 filter-block neumorphic ripple" id="pj">
-                                            <a asp-page="AdmUserPanel" asp-route-profile="PJ">
-                                                <div>
-                                                    <h5>Parceiros</h5>
-                                                </div>
-                                            </a>
-                                        </div>
-                                        <div class="col-3 col-md-2 user-data-1 filter-block neumorphic ripple" id="all" >
-                                            <a asp-page="AdmUserPanel" asp-route-profile="all">
-                                                <div>
-                                                    <h5>Todos</h5>
-                                                </div>
-                                            </a>
-                                        </div>
-                                    </div>
-                                    <div class="table-responsive-sm" id="tabela-users">
+
+                                    <div class="table-responsive-sm" id="tabela-services">
 
                                     </div>
 
@@ -142,13 +98,14 @@
             </div>
         </div>
     </main>
+
     <script>
-        var allUsers = JSON.parse('@Html.Raw(Json.Serialize(allusersByprofile))');
+        var allUsers = [];
         window.addEventListener("load", function () {
 
             // Draw HTML table
             var perrow = 1, // 3 cells per row
-                html = "<table id='userTable' class='table'><thead class='thead-light'><tr><th scope='col'>Nome</th><th scope='col'>Email</th><th scope='col'>WhatsApp</th><th scope='col'>Telefone</th><th scope='col'>Cidade</th></tr></thead><tbody><tr>";
+                html = "<table id='serviceTable' class='table'><thead class='thead-light'><tr><th scope='col'>Nome Serviço</th><th scope='col'>Categoria</th><th scope='col'>Preço</th><th scope='col'>Min. Valor Mercado</th><th scope='col'>Max. Valor Mercado</th></tr></thead><tbody><tr>";
 
             // Loop through array and add table cells
             for (var i = 0; i < allUsers.length; i++) {
@@ -171,7 +128,7 @@
             html += "</tr></tbody></table>";
 
             // Attach HTML to container
-            document.getElementById("tabela-users").innerHTML = html;
+            document.getElementById("tabela-services").innerHTML = html;
         });
 
     </script>
@@ -181,7 +138,7 @@
             var input, filter, table, tr, td, i, txtValue;
             input = document.getElementById("searchInput");
             filter = input.value.toUpperCase();
-            table = document.getElementById("userTable");
+            table = document.getElementById("serviceTable");
             tr = table.getElementsByTagName("tr");
 
             // Loop through all table rows, and hide those who don't match the search query
@@ -198,27 +155,8 @@
             }
         }
     </script>
-    <script>
-        changeFilterColor("@profileFilter.ToString()");
-        function changeFilterColor(filter) {
-            
-            if (filter == "PF") {
 
-                document.getElementById("pf").style.setProperty('background', 'cornflowerblue', 'important');
-                
-            }
 
-            if (filter == "PJ") {
-
-                document.getElementById("pj").style.setProperty('background', 'cornflowerblue', 'important');
-                
-            }
-
-            if (filter == "all") {
-                document.getElementById("all").style.setProperty('background', 'cornflowerblue', 'important'); 
-            }
-        }
-    </script>
     <script>
         function openNav() {
             document.getElementById("mySidenav").style.width = "250px";
@@ -239,9 +177,14 @@
             display: none;
         }
 
-        .defautl-footer {
+        .default-footer {
             display: none;
         }
     </style>
+    <a asp-page="AdmAddServicePanel" class="float-btn">
+        <p><i class="fa fa-plus"> </i></p>
+    </a>
+
 </body>
 </html>
+

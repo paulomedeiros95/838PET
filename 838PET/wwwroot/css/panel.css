@@ -112,6 +112,10 @@
     text-decoration: none;
 }
 
+.neumorphic-input:focus{
+    outline: none !important;
+}
+
 .neumorphic-button {
     background: linear-gradient(145deg, #e3e7ea, #bfc2c5);
     box-shadow: 6px 6px 12px #9b9ea0, -6px -6px 12px #ffffff;
@@ -196,6 +200,53 @@
     }
 /* Ripple effect */
 
+/* tags */
+.label-defautl{
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.sizebox{
+    margin: 10px;
+}
+/* tags */
+
+/* Float button */
+    .float-btn {
+        position: fixed;
+        width: 60px;
+        height: 60px;
+        bottom: 40px;
+        right: 40px;
+        background-color: #2006BD;
+        color: #FFF;
+        border-radius: 50px;
+        text-align: center;
+        box-shadow: 2px 2px 3px #999;
+        cursor: pointer;
+        z-index: 99999999999999999999999999999999999999999999999999999999999999999999;
+        transition: all .3s;
+        -webkit-transition: all .3s;
+         display: flex;
+        align-items: center;
+        align-content: center;
+        flex-direction: column-reverse;
+    }
+
+    .float-btn:hover{
+        text-decoration: none;
+        color: white;
+        -webkit-transform: scale(1.1);
+        -moz-transform: scale(1.1);
+        -o-transform: scale(1.1);
+        -ms-transform: scale(1.1);
+        transform: scale(1.1);
+    }
+
+    .float-btn i {
+        font-size: 21px;
+    }
+/* Float button */
 
 @media screen and (max-width: 750px) {
     .sidebar-col {
@@ -265,6 +316,16 @@
                 border-radius: 12px;
                 padding: 15px;
                 margin-bottom: 20px;
+            }
+
+            .content-col .options-home .services-data .all-services a{
+               text-decoration: none;
+                color: #363636;
+            }
+
+            .content-col .options-home .services-data .all-services a:hover{
+               text-decoration: none;
+                color: #363636;
             }
 
                 .content-col .options-home .services-data .all-services p {
@@ -390,3 +451,65 @@
     }
 }
 /*Fim Product Page */
+
+/* Services Page */
+.content-col .services-container {
+    margin-top: 15px;
+}
+
+    .content-col .services-container .services-board {
+        padding: 15px;
+        border-radius: 12px;
+        color: #363636;
+    }
+
+        .content-col .services-container .services-board .search-service {
+            width: 100%;
+            border: none;
+            padding: 10px;
+            border-radius: 32px;
+            font-size: 22px;
+            text-decoration: none;
+        }
+
+            .content-col .services-container .services-board .search-service:focus {
+                outline: -webkit-focus-ring-color auto 0px;
+            }
+
+        .content-col .services-container .services-board .search-bt {
+            border: none;
+            width: 50px;
+            height: 50px;
+            border-radius: 50px;
+            cursor: pointer;
+        }
+
+            .content-col .services-container .services-board .search-bt:focus {
+                outline: -webkit-focus-ring-color auto 0px;
+            }
+
+@media screen and (max-width: 750px) {
+    .search-bt-col {
+        padding-left: 0px !important;
+    }
+}
+
+.content-col .services-container .services-board #tabela-services {
+    margin-top: 25px;
+}
+
+    
+
+/*Fim Services Page */
+
+/*Add Services Page */
+@media screen and (max-width: 750px) {
+    .discount-inputs {
+        padding-bottom: 10px !important;
+    }
+}
+
+.form-bt-services{
+    padding-top: 20px;
+}
+/*Add Services Page */

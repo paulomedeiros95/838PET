@@ -15,7 +15,7 @@ namespace _838PET.Areas.Application.Data
         public DbSet<PetProduct> Produtos { get; set; }
 
         #endregion
-
+        //EntityFrameworkCore\update-database -context ApplicationDBContext
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder.UseSqlServer("Server=(localdb)\\mssqllocaldb;Database=838PET_DEV;Trusted_Connection=True;MultipleActiveResultSets=true");

@@ -2,6 +2,8 @@
 @model _838PET.Pages.AdmProductPanelModel
 @{
     ViewData["Title"] = "AdmProductPanel";
+
+
 }
 
 <!doctype html>
@@ -21,7 +23,7 @@
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
         <a asp-area="" asp-page="/Panel">Início</a>
         <a asp-page="AdmProductPanel">Produtos</a>
-        <a href="#">Serviços</a>
+        <a asp-page="AdmServicePanel">Serviços</a>
         <a href="#">Vouchers</a>
         <a href="#">Financeiro</a>
         <a href="#">Configurações</a>
@@ -59,7 +61,7 @@
                                 <ul>
                                     <li><a asp-area="" asp-page="/Panel">Início</a></li>
                                     <li><a asp-page="AdmProductPanel">Produtos</a></li>
-                                    <li><a href="#">Serviços</a></li>
+                                    <li><a asp-page="AdmServicePanel">Serviços</a></li>
                                     <li><a href="#">Vouchers</a></li>
                                     <li><a href="#">Financeiro</a></li>
                                     <li><a href="#">Configurações</a></li>
@@ -76,27 +78,28 @@
                     </div>
                     <div class="col-12 col-md-9 align-self-baseline content-col">
                         <h1>Produtos</h1>
-                            <div class="container product-price">
-                                <div class="row align-items-center">
-                                    <div class="col-12 col-md-12 align-self-baseline neumorphic product-board">
-                                        <h2>Preço padrão</h2>
-                                        <p>Defina o preço padrão que os parceiros irão pagar para anunciar.</p>
-                                        <div class="row justify-content-center">
-                                            <div class="col-10 col-md-8 align-self-center">
-                                                <input type="text" placeholder="Preço" asp-for="ProductValue" class="neumorphic-input" id="priceInput" />
-                                            </div>
-                                            <div class="col-2 col-md-2 align-self-center done-bt-col">
-                                                <button type="submit" class="neumorphic-button done-bt ripple"><i class="fa fa-check" onclick="searchFunction()"></i></button>
-                                            </div>
+                        <div class="container product-price">
+                            <div class="row align-items-center">
+                                <div class="col-12 col-md-12 align-self-baseline neumorphic product-board">
+                                    <h2>Preço padrão</h2>
+                                    <p>Defina o preço padrão que os parceiros irão pagar para anunciar.</p>
+                                    <div class="row justify-content-center">
+                                        <div class="col-10 col-md-8 align-self-center">
+                                            <input type="text" placeholder="Preço" asp-for="ProductValue" class="neumorphic-input" id="priceInput" />
+                                        </div>
+                                        <div class="col-2 col-md-2 align-self-center done-bt-col">
+                                            <button type="submit" class="neumorphic-button done-bt ripple"><i class="fa fa-check" onclick="searchFunction()"></i></button>
                                         </div>
                                     </div>
                                 </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </main>
-    
+
     <script>
         function openNav() {
             document.getElementById("mySidenav").style.width = "250px";
@@ -117,7 +120,7 @@
             display: none;
         }
 
-        .defautl-footer {
+        .default-footer {
             display: none;
         }
     </style>

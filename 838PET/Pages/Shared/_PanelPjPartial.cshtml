@@ -1,1 +1,229 @@
-﻿<h1>panel pj</h1>
+﻿@using Microsoft.AspNetCore.Identity
+@using _838PET.Areas.Identity.Data
+
+@inject SignInManager<UserIdentity> SignInManager
+@inject UserManager<UserIdentity> UserManager
+
+@{
+    var myLocalUser = await UserManager.GetUserAsync(User);
+    
+
+    var splitName = myLocalUser.FullName.Split(" ");
+    String firstName = splitName[0];
+
+
+}
+
+<!doctype html>
+<html lang="pt_br">
+<head>
+    <title>Admin Panel</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/panel.css" />
+
+</head>
+<body style="background-color: #ECF0F3;">
+    <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <a asp-area="" asp-page="/Panel">Início</a>
+        <a asp-page="PjProductPanel">Produtos</a>
+        <a asp-page="PjServicePanel">Serviços</a>
+        <a asp-page="PjVoucherPanel">Vouchers</a>
+        <a href="#">Financeiro</a>
+        <a href="#">Configurações</a>
+
+        <form id="logoutForm" class="form-inline" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Page("/Index", new { area = "" })">
+            <button id="logout" type="submit" class="nav-link btn btn-link logout">Sair</button>
+        </form>
+
+    </div>
+    <header>
+        <div class="appbar" id="topo">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-2">
+                        <span class="bt-mobile" onclick="openNav()">&#9776;</span>
+                    </div>
+                    <div class="col-10 appbar-title">
+                        <label>838 Pet</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main role="main" class="pb-3">
+        <div class="stack">
+            <div class="container">
+                <div class="row align-items-start">
+                    <div class="col-12 col-md-3 align-self-start sidebar-col">
+                        <div class="neumorphic-sidebar">
+                            <div class="sidebar">
+                                <h2>Menu</h2>
+                                <div class="divider"></div>
+                                <ul>
+                                    <li><a asp-area="" asp-page="/Panel">Início</a></li>
+                                    <li><a asp-page="PjProductPanel">Produtos</a></li>
+                                    <li><a asp-page="PjServicePanel">Serviços</a></li>
+                                    <li><a asp-page="PjVoucherPanel">Vouchers</a></li>
+                                    <li><a href="#">Financeiro</a></li>
+                                    <li><a href="#">Configurações</a></li>
+                                    <li>
+                                        <form id="logoutForm" class="form-inline" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Page("/Index", new { area = "" })">
+                                            <button id="logout" type="submit" class="nav-link btn btn-link logout">Sair</button>
+                                        </form>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-9 align-self-center content-col">
+                        <h1>Olá, @(firstName)</h1>
+                        <div class="container options-home">
+                            <div class="row align-items-center">
+                                <div class="col-12 col-md-12 align-self-center neumorphic user-data">
+                                    <h2>Informações</h2>
+                                    <div class="sizebox"></div>
+                                    <div class="sizebox"></div>
+                                    <div class="row">
+                                        <div class="col-3 col-md-3">
+                                            <h5>Responsável:</h5>
+                                        </div>
+                                        <div class="col-6 col-md-5">
+                                            <h5>@(myLocalUser.FullName ?? "Não há informação")</h5>
+                                        </div>
+                                    </div>
+
+                                    <div class="sizebox"></div>
+                                    <div class="row">
+                                        <div class="col-3 col-md-3">
+                                            <h5>Razão Social:</h5>
+                                        </div>
+                                        <div class="col-6 col-md-5">
+                                            <h5>@(myLocalUser.RazaoSocial ?? "Não há informação")</h5>
+                                        </div>
+                                    </div>
+
+                                    <div class="sizebox"></div>
+                                    <div class="row">
+                                        <div class="col-3 col-md-3">
+                                            <h5>Nome Fantasia:</h5>
+                                        </div>
+                                        <div class="col-6 col-md-5">
+                                            <h5>@(myLocalUser.NomeFantasia ?? "Não há informação")</h5>
+                                        </div>
+                                    </div>
+
+                                    <div class="sizebox"></div>
+                                    <div class="row">
+                                        <div class="col-3 col-md-3">
+                                            <h5>CPF/CNPJ:</h5>
+                                        </div>
+                                        <div class="col-6 col-md-5">
+                                            <h5>@(myLocalUser.Document ?? "Não há informação")</h5>
+                                        </div>
+                                    </div>
+
+                                    <div class="sizebox"></div>
+                                    <div class="row">
+                                        <div class="col-3 col-md-3">
+                                            <h5>CRVM:</h5>
+                                        </div>
+                                        <div class="col-6 col-md-5">
+                                            <h5>@(myLocalUser.CRVM ?? "Não há informação")</h5>
+                                        </div>
+                                    </div>
+
+                                    <div class="sizebox"></div>
+                                    <div class="row">
+                                        <div class="col-3 col-md-3">
+                                            <h5>E-mail:</h5>
+                                        </div>
+                                        <div class="col-6 col-md-5">
+                                            <h5>@(myLocalUser.Email ?? "Não há informação")</h5>
+                                        </div>
+                                    </div>
+
+                                    <div class="sizebox"></div>
+                                    <div class="row">
+                                        <div class="col-3 col-md-3">
+                                            <h5>Telefone:</h5>
+                                        </div>
+                                        <div class="col-6 col-md-5">
+                                            <h5>@(myLocalUser.Telefone ?? "Não há informação")</h5>
+                                        </div>
+                                    </div>
+
+                                    <div class="sizebox"></div>
+                                    <div class="row">
+                                        <div class="col-3 col-md-3">
+                                            <h5>Celular:</h5>
+                                        </div>
+                                        <div class="col-6 col-md-5">
+                                            <h5>@(myLocalUser.AlternativoTelefone ?? "Não há informação")</h5>
+                                        </div>
+                                    </div>
+
+                                    <div class="sizebox"></div>
+                                    <div class="row">
+                                        <div class="col-3 col-md-3">
+                                            <h5>Endereço:</h5>
+                                        </div>
+                                        <div class="col-6 col-md-5">
+                                            <h5>@(myLocalUser.Endereco ?? "Não há informação"), @(myLocalUser.NumeroDoEndereco) - @(myLocalUser.Bairro ?? "Não há informação") | @(myLocalUser.Cidade ?? "Não há informação") - @(myLocalUser.Estado ?? "Não há informação"), @(myLocalUser.CEP ?? "Não há informação")</h5>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div class="row justify-content-between services-data">
+                                <div class="col-12 col-md-5 all-services neumorphic">
+                                    <h2>Serviços</h2>
+                                    <p>Total de serviços cadastrados.</p>
+                                    <h3>90</h3>
+                                </div>
+                                <div class="col-12 col-md-3 all-services neumorphic">
+                                    <h2>Vouchers</h2>
+                                    <p>Total de vouchers emitidos.</p>
+                                    <h3>90</h3>
+                                </div>
+                                <div class="col-12 col-md-3 all-services neumorphic">
+                                    <h2>Produtos</h2>
+                                    <p>Total de produtos cadastrados.</p>
+                                    <h3>20</h3>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <script>
+        function openNav() {
+            document.getElementById("mySidenav").style.width = "250px";
+        }
+
+        function closeNav() {
+            document.getElementById("mySidenav").style.width = "0";
+        }
+    </script>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <style>
+        .default-header {
+            display: none;
+        }
+
+        .default-footer {
+            display: none;
+        }
+    </style>
+</body>
+</html>
